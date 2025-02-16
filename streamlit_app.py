@@ -40,9 +40,9 @@ net_proceeds_value = fc.net_proceeds(T_MONTHS, PRINCIPAL, INTEREST_RATE, LOAN_TE
 # Create a DataFrame
 data = {
     'Time (months)': months,
-    'Total cost (DKK)': fc.total_cost(months, DOWN_PAYMENT, BUYING_EXPENSES, monthly_payment),
-    'Remaining balance (DKK)': fc.remaining_balance(PRINCIPAL, INTEREST_RATE, LOAN_TERM, months),
-    'Net proceeds (DKK)': fc.net_proceeds(months, PRINCIPAL, INTEREST_RATE, LOAN_TERM, SELLING_EXPENSES_RATE, TOTAL_PRICE, hpi_growth_rate)
+    'Total cost (DKK)': fc.total_cost(months, DOWN_PAYMENT, BUYING_EXPENSES, monthly_payment).round(1),
+    'Remaining balance (DKK)': fc.remaining_balance(PRINCIPAL, INTEREST_RATE, LOAN_TERM, months).round(1),
+    'Net proceeds (DKK)': fc.net_proceeds(months, PRINCIPAL, INTEREST_RATE, LOAN_TERM, SELLING_EXPENSES_RATE, TOTAL_PRICE, hpi_growth_rate).round(1)
 }
 
 df = pd.DataFrame(data)
